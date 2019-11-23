@@ -1,16 +1,14 @@
 <template>
   <v-app dark>
     
- <v-card
-    class="ml-6 mt-10 mb-10"
-    height="700"
-    width="256"
-    fixed
-  >
+  <v-card>
     <v-navigation-drawer
-      class="green accent-4 "
+      
+      class="green accent-4 ml-6 mt-10 mb-10 "
+      height="700"
+      width="256"
       dark
-      permanent
+      fixed
     >
 
     <v-list-item>
@@ -18,7 +16,7 @@
           <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
         </v-list-item-avatar>
 
-        <v-list-item-title>John Leider</v-list-item-title>
+        <v-list-item-title>Boulaouinat kaouther</v-list-item-title>
 
         
       </v-list-item>
@@ -45,7 +43,7 @@
       </v-list>
       
     </v-navigation-drawer>
- </v-card>
+  </v-card>
 
 
 
@@ -77,33 +75,33 @@ export default {
         },
         {
           icon: 'mdi-checkbox-marked-circle-outline',
-          title: 'Suivi',
+          title: 'Demande',
           to: '/suivi'
         },
          {
           icon: 'mdi-library',
-          title: 'Cours',
+          title: 'Notes',
           to: '/cours'
         },
         {
           icon: 'mdi-calendar-clock',
           title: 'Emplois du temps',
-          to: '/delib'
+          to: ''
         },
         {
           icon: 'mdi-chart-line',
           title: 'Délibiration',
-          to: '/delib'
+          to: ''
         },
           {
           icon: 'mdi-school',
           title: 'Encadrement',
-          to: '/delib'
+          to: ''
         },
          {
           icon: 'mdi-settings',
           title: 'Paramétre',
-          to: '/delib'
+          to: ''
         }
       ],
      
