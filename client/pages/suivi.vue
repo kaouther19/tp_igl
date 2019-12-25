@@ -38,6 +38,7 @@
   </v-layout>
 </template>
 <script>
+import axios from "axios";
 export default {
   data: () => ({
     valid: false,
@@ -51,21 +52,19 @@ export default {
     ]
   }),
   methods: {
-    submit() {
-      class Form {
-        constructor(groupeA, groupeV, raison) {
-          this.grpA = groupeA;
-          this.grpV = groupeV;
-          this.rais = raison;
-        }
-        afficherForm() {
-          console.log(
-            "from " + this.grpA + " to " + this.grpV + " because " + this.rais
-          );
-        }
-      }
-      let form = new Form(this.groupeA, this.groupeV, this.raison);
-      form.afficherForm();
+    async submit() {
+      const form = {
+        formulaire_grpA: this.groupeA,
+        formulaire_grpV: this.groupeV,
+        formulaire_raison: this.raison
+      };
+      axios
+        .post("http://localhost:5000/formulaires/add", form)
+        .then(reponse => console.log(reponse.data))
+        .catch(function(error) {
+          console.log(error);
+        });
+      console.log(form);
       // dans cette partie on envoie le contenue de formulaire a la base de donnee
     }
   }
