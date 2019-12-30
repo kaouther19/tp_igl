@@ -33,7 +33,7 @@ export default {
     };
   },
   methods: {
-    myFunctionOnLoad: function() {
+    affichageOnLoad: function() {
       axios
         .get("http://localhost:4000/notes/")
         .then(reponse => {
@@ -47,7 +47,7 @@ export default {
   },
 
   created: function() {
-    this.myFunctionOnLoad();
+    this.affichageOnLoad();
   }
 };
 </script>
