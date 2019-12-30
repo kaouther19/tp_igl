@@ -34,14 +34,6 @@ export default {
   },
   methods: {
     myFunctionOnLoad: function() {
-      class Note {
-        constructor(module, cc, ci, cf) {
-          this.module = module;
-          this.cc = cc;
-          this.ci = ci;
-          this.cf = cf;
-        }
-      }
       axios
         .get("http://localhost:4000/notes/")
         .then(reponse => {
