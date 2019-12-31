@@ -52,6 +52,11 @@ export default {
     ]
   }),
   methods: {
+    /**
+     * Fonction qui récupere les informations entrées par l'utilisateur dans le formulaire et les mettre dans la base de donnée
+      cette fonction s'exute quand l'utilisateur appuie sur le button envoyer
+     */
+
     async submit() {
       const form = {
         formulaire_grpA: this.groupeA,

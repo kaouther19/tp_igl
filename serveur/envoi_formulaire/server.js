@@ -14,6 +14,7 @@ const connection = mongoose.connection;
 connection.once("open", function() {
   console.log("MongoDB databese connection established successfully ");
 });
+/** API utilisé pour ajouter un formulaire à la base de donnée */
 formRoutes.route("/add").post(function(req, res) {
   let form = new Formulaire(req.body);
   form
