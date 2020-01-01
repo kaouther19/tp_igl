@@ -7,6 +7,7 @@
         width="256"
         dark
         fixed
+        permanent
       >
         <v-list-item>
           <v-list-item-avatar>
@@ -51,7 +52,7 @@ export default {
           icon: "mdi-account",
           title: "Profile",
           to: "/profile",
-          id: ""
+          id: "prof"
         },
         {
           icon: "mdi-checkbox-marked-circle-outline",
