@@ -5,9 +5,14 @@ const Schema = mongoose.Schema;
    */
 let Note = new Schema({
   /**
+  Le matricule de  l'étudiant. 
+  */
+  note_matricule: {
+    type: String
+  },
+  /**
    Le nom de module .
    */
-
   note_module: {
     type: String
   },

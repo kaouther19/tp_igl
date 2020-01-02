@@ -9,7 +9,11 @@ const noteRoutes = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/tp_igl", { useNewUrlParser: true });
+mongoose.connect("mongodb://127.0.0.1:27017/tp_igl", {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+});
 const connection = mongoose.connection;
 connection.once("open", function() {
   console.log("MongoDB databese connection established successfully ");
@@ -30,8 +34,11 @@ noteRoutes.route("/").get(function(req, res) {
 /**
  * API qui récupere l'ensemble des notes d'un étudiant dans le module note_module utilisé pour le teste unitaire.
  */
-noteRoutes.route("/:note_module").get(function(req, res) {
-  Note.find({ note_module: req.params.note_module }, function(err, notes) {
+noteRoutes.route("/:note_matricule").get(function(req, res) {
+  Note.find({ note_matricule: req.params.note_matricule }, function(
+    err,
+    notes
+  ) {
     if (err) {
       console.log(err);
     } else {
