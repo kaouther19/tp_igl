@@ -1,42 +1,53 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 /**
- * c'est le schema de la note, qui représente les champs dans la base de donnée des notes d'un module obtenues par un étudiant.
+ * @property {Schema}
+ * Note le schema de la note, qui représente les champs dans la base de donnée des notes d'un module obtenues par un étudiant.
  */
 let Note = new Schema({
   /**
    * Le matricule de  l'étudiant.
-   * @type : String
+  
    */
   note_matricule: {
+    /**
+     * @type {String}
+     * */
     type: String
   },
   /**
    * Le nom de module .
-   * @type : String
    */
   note_module: {
+    /**
+     * @type {String}
+     */
     type: String
   },
   /**
    * La note de controle contenu obtenue par l'étudiant.
-   * @type : Number
+   
    */
   note_cc: {
+    /**
+     *  @type {Number}
+     */
     type: Number
   },
   /**
    * La note de controle intermédiare obtenue par l'étudiant.
-   * @type : Number
    */
   note_ci: {
+    /**
+     *  @type {Number} */
     type: Number
   },
   /**
    * La note de controle final obtenue par l'étudiant.
-   * @type : Number
    */
   note_cf: {
+    /**
+     *  @type {Number} */
     type: Number
   }
 });

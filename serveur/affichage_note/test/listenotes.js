@@ -13,7 +13,6 @@ describe("GET /notes/170070", () => {
       })
       .catch(err => done(err));
   });
-
   it("OK, get une note dans notes qui a comme matricule_etudiant 170070", done => {
     request(app)
       .post("/notes/add")

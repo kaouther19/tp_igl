@@ -33,14 +33,15 @@ import axios from "axios";
 export default {
   data() {
     return {
+      // @vuese
+      // table des notes de l'étudiant
+
       notes: []
     };
   },
   methods: {
-    /**
-     * Cette fonction récupère la liste des notes des modules obtenues par l'etudiant
-     * la fonction s'execute au chargement de la page
-     */
+    // @vuese
+    // Cette fonction récupère la liste des notes des modules obtenues parl'etudiant
     affichageOnLoad: function() {
       axios
         .get("http://localhost:4000/notes/170040")

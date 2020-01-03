@@ -54,10 +54,9 @@ export default {
     ]
   }),
   methods: {
-    /**
-     * Fonction qui récupère les informations entrées par l'utilisateur dans le formulaire et les mettre dans la base de donnée
-      cette fonction s'excute quand l'utilisateur appuie sur le button envoyer
-     */
+    // @vuese
+    // Fonction qui récupère les informations entrées par l'utilisateur dans le formulaire et les mettre dans la base de donnée
+    // cette fonction s'excute quand l'utilisateur appuie sur le button envoyer
 
     async submit() {
       if (this.groupeA && this.groupeV) {
@@ -73,9 +72,9 @@ export default {
           .catch(function(error) {
             console.log(error);
           });
-          this.groupeA="";
-          this.groupeV="";
-          this.raison="";
+        this.groupeA = "";
+        this.groupeV = "";
+        this.raison = "";
         console.log(form);
         // dans cette partie on envoie le contenue de formulaire a la base de donnee
       }
