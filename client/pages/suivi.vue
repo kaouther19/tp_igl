@@ -49,19 +49,20 @@ export default {
     raison: "",
     groupeRules: [
       v => !!v || "Numéro de groupe est obligatoire",
-      v => v.length <= 2 || "Le groupe doit être un seule nombre "
+      v => v.length <= 2 || "Le groupe doit être éxistant "
       // ajout de condition sur le nombre de groupe qu'on a
     ]
   }),
   methods: {
     /**
-     * Fonction qui récupere les informations entrées par l'utilisateur dans le formulaire et les mettre dans la base de donnée
-      cette fonction s'exute quand l'utilisateur appuie sur le button envoyer
+     * Fonction qui récupère les informations entrées par l'utilisateur dans le formulaire et les mettre dans la base de donnée
+      cette fonction s'excute quand l'utilisateur appuie sur le button envoyer
      */
 
     async submit() {
-      if (this.groupeA && this.groupeV ) {
+      if (this.groupeA && this.groupeV) {
         const form = {
+          formulaire_matricule: "170040",
           formulaire_grpA: this.groupeA,
           formulaire_grpV: this.groupeV,
           formulaire_raison: this.raison
@@ -72,6 +73,9 @@ export default {
           .catch(function(error) {
             console.log(error);
           });
+          this.groupeA="";
+          this.groupeV="";
+          this.raison="";
         console.log(form);
         // dans cette partie on envoie le contenue de formulaire a la base de donnee
       }

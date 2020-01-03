@@ -50,11 +50,18 @@ noteRoutes.route("/:note_matricule").get(function(req, res) {
  * API qui ajoutel'ensemble des notes d'un étudiant dans le module note_module utilisé pour le test.
  */
 noteRoutes.route("/add").post(function(req, res) {
-  let note = new Note(req.body);
+  const body = req.body;
+  const note = new Note({
+    note_matricule: body.note_matricule,
+    note_module: body.note_module,
+    note_cc: body.note_cc,
+    note_ci: body.note_ci,
+    note_cf: body.note_cf
+  });
   note
-    .save()
+    .save(note)
     .then(note => {
-      res.status(200).json({ note: " added successfully" });
+      res.status(200).send(note);
     })
     .catch(err => {
       res.status(400).send("adding new note failed");
@@ -64,3 +71,5 @@ app.use("/notes", noteRoutes);
 app.listen(PORT, function() {
   console.log("Server is running on Port: " + PORT);
 });
+
+module.exports = app;

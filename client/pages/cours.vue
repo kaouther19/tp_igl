@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     /**
-     * Cette fonction recupere la liste des notes des modules d'un etudiant
+     * Cette fonction récupère la liste des notes des modules obtenues par l'etudiant
      * la fonction s'execute au chargement de la page
      */
     affichageOnLoad: function() {

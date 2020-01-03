@@ -20,11 +20,17 @@ connection.once("open", function() {
 });
 /** API utilisé pour ajouter un formulaire à la base de donnée */
 formRoutes.route("/add").post(function(req, res) {
-  let form = new Formulaire(req.body);
+  const body = req.body;
+  const form = new Formulaire({
+    formulaire_matricule: body.formulaire_matricule,
+    formulaire_grpA: body.formulaire_grpA,
+    formulaire_grpV: body.formulaire_grpV,
+    formulaire_raison: body.formulaire_raison
+  });
   form
-    .save()
+    .save(form)
     .then(form => {
-      res.status(200).json({ form: " added successfully" });
+      res.status(200).send(form);
     })
     .catch(err => {
       res.status(400).send("adding new note failed");
@@ -34,3 +40,4 @@ app.use("/formulaires", formRoutes);
 app.listen(PORT, function() {
   console.log("Server is running on Port: " + PORT);
 });
+module.exports = app;

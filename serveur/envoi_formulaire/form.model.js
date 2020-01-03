@@ -3,9 +3,14 @@ const Schema = mongoose.Schema;
 /** c'est le schema du formulaire, qui représente les champs d'un formulaire dans la base de donnée. */
 let Formulaire = new Schema({
   /**
+   * LE matricule de l'étudiant
+   */
+  formulaire_matricule: {
+    type: String
+  },
+  /**
   Le groupe actuel de l'étudiant.
    */
-
   formulaire_grpA: {
     type: Number
   },

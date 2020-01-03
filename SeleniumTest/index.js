@@ -1,5 +1,7 @@
 const { Builder, By, Key, until } = require("selenium-webdriver");
-
+/**
+ * cette focntion est utiliée pour le test selenuim
+ */
 (async function example() {
   let driver = await new Builder().forBrowser("chrome").build();
   try {
