@@ -47,7 +47,7 @@ noteRoutes.route("/:note_matricule").get(function(req, res) {
   });
 });
 /**
- * API qui ajoutel'ensemble des notes d'un étudiant dans le module note_module utilisé pour le test.
+ * API qui ajoute l'ensemble des notes d'un étudiant dans le module note_module utilisé pour le test.
  */
 noteRoutes.route("/add").post(function(req, res) {
   const body = req.body;
