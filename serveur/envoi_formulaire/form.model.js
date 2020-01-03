@@ -4,26 +4,30 @@ const Schema = mongoose.Schema;
 let Formulaire = new Schema({
   /**
    * LE matricule de l'étudiant
+   * @type : String
    */
   formulaire_matricule: {
     type: String
   },
   /**
-  Le groupe actuel de l'étudiant.
+   * Le groupe actuel de l'étudiant.
+   * @type : Number
    */
   formulaire_grpA: {
     type: Number
   },
   /**
-  Le groupe que l'étudiant veut.
-  */
+   * Le groupe que l'étudiant veut.
+   * @type : Number
+   */
 
   formulaire_grpV: {
     type: Number
   },
   /**
-  La raison de changement donnée par l'étudiant.
-  */
+   * La raison de changement donnée par l'étudiant.
+   * @type : String
+   */
   formulaire_raison: {
     type: String
   }
