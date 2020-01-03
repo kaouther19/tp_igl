@@ -1,18 +1,25 @@
 version: "3"
 services:
   affichagenote:
-    container_name: "affichagenote-container"
-    build: "./serveur/affichage_note"
+    container_name: affichage_container
+    restart: always
+    build: ./serveur/affichage_note
     ports:
       - "4000:4000"
-    volumes:
-      - .:/serveur/affichage_note
+    links:
+      - mongo
 
-    depends_on:
-      - mongodb
+  envoiform:
+    container_name: envoi_container
+    restart: always
+    build: ./serveur/envoi_formulaire
+    ports:
+      - "5000:5000"
+    links:
+      - mongo
 
-  mongodb:
-    container_name: "mongodb"
+  mongo:
+    container_name: mongo
     image: mongo
     ports:
       - "27017:27017"

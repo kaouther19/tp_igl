@@ -1,11 +1,18 @@
 FROM mhart/alpine-node:12
  
-WORKDIR .
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-COPY . .
+COPY . /usr/src/app
+
+RUN yarn
+
+RUN yarn build
 
 EXPOSE 3000
 
-RUN yarn
-RUN yarn build
+ENV NUXT_HOST=0.0.0.0
+
+ENV NUXT_PORT=3000
+
 CMD ["yarn", "start"]
